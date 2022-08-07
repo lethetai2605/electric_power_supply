@@ -9,9 +9,7 @@ Create log files correspond with equiqments in `equiqInfor.txt`
 ### 2. Run step by step
 ****
 ```console
-./equipInfo
-./systemInfo
-./writeLogProcess
+./initial.sh
 ./server
 ./client
 ```
