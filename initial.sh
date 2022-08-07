@@ -1,0 +1,3 @@
+./equipInfo
+./systemInfo
+./writeLogProcess
