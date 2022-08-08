@@ -45,7 +45,7 @@ void getInfo(char *key_from_server)
                 perror("shmget");
                 exit(1);
         }
-
+        // bo nho de luu log
         if ((shm2 = shmat(shmid, NULL, 0)) == (char *)-1)
         {
                 perror("shmat");
@@ -172,6 +172,7 @@ int main()
                                         *shm = *shm + currentVoltage;
                                 }
                                 printf("Current Power Consumption: %d\n", *shm);
+                                //// send(sockfd, buf, len, flags)
                                 send(connectSock, KEY, 4, 0);
                         }
                         if (currentVoltage != 0)

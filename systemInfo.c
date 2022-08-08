@@ -59,6 +59,7 @@ int main()
     }
 
     // ghi thông tin hệ thống vào bộ nhớ dùng chung
+    // doc file system roi ghi vao sharedmem key 9999
     s = shm;
     strcpy(s,readFileIntoString());
     exit(0);

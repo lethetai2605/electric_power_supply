@@ -295,8 +295,8 @@ void runDevice(int i, int isSaving)
 	snprintf(buffer, 10, "%d", voltage);
 	makeCommand(command, "ON", deviceName, buffer);
 	send(clientSocket, command, strlen(command), 0);
-	getResponse();
-	getShareMemoryPointer(serverResponse);
+	getResponse(); //// 1234
+	getShareMemoryPointer(serverResponse); //// shm
 	int *currentDevice;
 	currentDevice = shm + 1;
 
@@ -358,6 +358,7 @@ void stopDevice(char *deviceName)
 	getResponse();
 }
 
+////dem so dau ,
 int countEntityNumber(char *str)
 {
 	int i;

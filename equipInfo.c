@@ -1,4 +1,4 @@
-/***** đọc thông tin về các thiết bị hiện có và lưu vào bộ nhớ dùng chung *******/
+/*****  *******/
 
 #include <dirent.h>
 #include <stdlib.h>
@@ -48,6 +48,8 @@ int main()
   char *shm;
   key = 5678;
   // tạo bộ nhớ dùng chung
+  //// tra ve id cua shared memory
+  //// key: khoa giup nhan ra bo nho chia se
   if ((shmid = shmget(key, SHMSZ, IPC_CREAT | 0666)) < 0)
   {
     perror("shmget");
@@ -55,6 +57,7 @@ int main()
   }
 
   // lấy địa chỉ bộ nhớ dùng chung
+  //// de NULL thi he thong tu gan phan doan bo nho phu hop
   if ((shm = shmat(shmid, NULL, 0)) == (char *)-1)
   {
     perror("shmat");
@@ -62,6 +65,7 @@ int main()
   }
 
   // ghi danh sách các thiết bị có sẵn vào bộ nhớ dùng chung
+  //// key 5678
   strcpy(shm, readFileIntoString());
   exit(0);
 }
