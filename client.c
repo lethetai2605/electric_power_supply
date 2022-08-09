@@ -151,9 +151,9 @@ void showMenuAction(int i)
 		choice = 0;
 		printf("-----Welcome-----\n");
 		printf("Please choose an action:\n");
-		printf("1. Run at default mode \n");
-		printf("2. Run at saving mode\n");
-		printf("3. Turn off and quit\n");
+		printf("1. Turn off and quit\n");
+		printf("2. Run at default mode\n");
+		printf("3. Run at saving mode\n");
 		printf("Your choice: ");
 		while (choice == 0)
 		{
@@ -173,12 +173,11 @@ void showMenuAction(int i)
 
 		switch (choice)
 		{
-		case 1:
+		case 2:
 			runDevice(i - 1, 0);
 			break;
-		case 2:
-			runDevice(i - 1, 1);
-			break;
+		case 3:
+		 	runDevice(i - 1, 1);
 		default:
 			exit(0);
 		}
